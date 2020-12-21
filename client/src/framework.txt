@@ -2,13 +2,13 @@ YELLOW: #EEFF69
 BLUE: #00C2CB
 GREY: #77838D
 
-NAV
+--NAV
   title (homebutton)
   nav bar
     add a post
-    login?
+    login?---- tick----
 
-blog post cards
+--blog post cards
   title
   author/user
   content
@@ -19,6 +19,7 @@ post detail screen (readmore)  ✅
   edit button ✅
   delete button ✅
 .....................
+
 
 add / edit post screen 
 
