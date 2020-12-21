@@ -1,6 +1,6 @@
-import Nav from "./Nav";
-import Footer from "./Footer";
-import Header from "./Header";
+import Nav from "../Nav/Nav";
+import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
 
 export default function Layout(props) {
   return (
