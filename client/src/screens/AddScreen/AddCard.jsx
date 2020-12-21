@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import post from '../../../../models/post';
 import { createPost } from '../services/posts'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
+
 
 
 const AddCard = (props) => {
@@ -41,7 +44,6 @@ const AddCard = (props) => {
   } else {
     history.push("/");
   }
-}
 
   return (
     <div>
@@ -78,8 +80,18 @@ const AddCard = (props) => {
         />
         <button type='submit' className='submit-button'>Bazinga</button>
       </form>
+    
+    <div>
+      <div className="edit-time">
+            <Link to={`/edit/${post.id}`}> 
+              <button className="edit-butt"><FontAwesomeIcon icon={faEdit} /></button>
+            </Link>
+
+          </div>
+      </div>
     </div>
   );
+
 };
 
 export default AddCard;

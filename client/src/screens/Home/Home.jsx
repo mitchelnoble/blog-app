@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.css';
 import AddCard from '../AddCard/AddCard';
-import PostDetail from '../PostDetail/PostDetail';
+import PostDetail from '../ExpandedPost/PostDetail';
 
 
 const Home = () => {
