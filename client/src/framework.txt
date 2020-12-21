@@ -1,0 +1,49 @@
+YELLOW: #EEFF69
+BLUE: #00C2CB
+GREY: #77838D
+
+NAV
+  title (homebutton)
+  nav bar
+    add a post
+    login?
+
+blog post cards
+  title
+  author/user
+  content
+  click through (readmore) to full detail
+  
+post detail screen (readmore) 
+  more details // image
+  edit button
+  delete button
+
+add / edit post screen 
+  form
+    title
+    author
+    content
+    link to an image
+  submit button => thanks guy screen!
+
+service functions
+  api calls 
+    getPost
+    getPosts
+    editPost
+    deletePost
+    createPost
+   apiConfig 
+    baseURL
+    axios.create
+
+  utils functions
+    PMVP
+    sort by created date
+    sort by user
+    search by user
+    search by title
+
+
+    
