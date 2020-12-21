@@ -6,7 +6,7 @@ GREY: #77838D
   title (homebutton)
   nav bar
     add a post
-    login?
+    login?---- tick----
 
 --blog post cards
   title
