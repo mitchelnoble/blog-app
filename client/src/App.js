@@ -1,12 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-import Home from '.screens/Home'
-
+import "./App.css";
+import { Route } from "react-router-dom";
+import Home from "./screens/Home/Home";
+import AddCard from "./screens/AddScreen/AddCard";
+import Layout from "./components/shared/Layout/Layout";
+// import PostDetail from "./screens/PostDetail/PostDetail";
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <Layout>
+        <Route exact path="/" component={Home} />
+        <Route path="/add-cards" component={AddCard} />
+        {/* <Route path="/post-detail/:id" component={PostDetail} /> */}
+      </Layout>
     </div>
   );
 }
