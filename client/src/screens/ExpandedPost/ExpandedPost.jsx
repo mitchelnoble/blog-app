@@ -21,6 +21,7 @@ const ExpandedPost = (props) => {
       <div>{post.author}</div>
       <div>{post.content}</div>
       <img src={`${post.imgURL}`} alt={`${post.title}`} />
+      {/* DELETE BUTTON AND EDIT BUTTON HERE */}
     </div>
   );
 };

@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import api from "../../services/apiConfig";
-import { createPost } from "../../services/posts";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit } from "@fortawesome/free-solid-svg-icons";
+import { createPost, updatePost } from "../../services/posts";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faEdit } from "@fortawesome/free-solid-svg-icons";
 
 const AddCard = (props) => {
   const history = useHistory();
@@ -11,11 +10,9 @@ const AddCard = (props) => {
   const [post, setPost] = useState({
     author: "",
     title: "",
-    imgUrl: "",
+    imgURL: "",
     content: "",
   });
-
-  const [isCreated, setIsCreated] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,28 +24,21 @@ const AddCard = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const isCreated = await createPost(post);
-    setIsCreated({ isCreated });
+    if (params.id) {
+      await updatePost(params.id, post);
+      history.push("/");
+    } else {
+      await createPost(post);
+      history.push("/");
+    }
   };
-
-  // if (isCreated) {
-  //   history.push("/");
-  // }
-
-  if (params.id) {
-    api.updatePosts(params.id, post);
-    props.setToggleFetch((prev) => !prev);
-    // history.push("/");
-  } else {
-    // history.push("/");
-  }
 
   return (
     <div>
       <form className="addForm" onSubmit={handleSubmit}>
         <input
           className="input-name"
-          placeholder= "Author"
+          placeholder="Author"
           value={post.author}
           name="author"
           required
@@ -65,8 +55,8 @@ const AddCard = (props) => {
         <input
           className="input-image"
           placeholder="Image"
-          value={post.img}
-          name="image"
+          value={post.imgURL}
+          name="imgURL"
           onChange={handleChange}
         />
         <input
