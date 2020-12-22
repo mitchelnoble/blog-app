@@ -1,0 +1,43 @@
+.all-cards {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.post-card {
+  background-color: rgb(242, 229, 83);
+  width: 20vw;
+  height: 12vw;
+  margin-top: 5vw;
+  margin-bottom: 5vw;
+  margin-left: 10vw;
+  font-size: 2vw;
+  border-radius: 20px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+  justify-content: center;
+}
+.post-title {
+  text-align: center;
+  justify-content: center;
+}
+.post-author {
+  text-align: center;
+  justify-content: center;
+}
+
+.more-book {
+margin-top: 8vw;
+margin-left: -10vw;
+  
+}
+
+.more-icon{
+  text-decoration: none;
+  font-size: 6vw;
+  color: rgb(40, 189, 189);
+  text-align: center;
+  margin-left: -19vw;
+
+}
