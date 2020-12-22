@@ -8,16 +8,12 @@ const AddCard = (props) => {
   const history = useHistory();
   const params = useParams();
   const [post, setPost] = useState({
-    _id: "",
     author: "",
     title: "",
     imgURL: "",
     content: "",
-    _v: "",
-    createdAt: "",
-    updatedAt: "",
   });
-  console.log(post);
+
   useEffect(() => {
     async function fetchData() {
       if (params.id) {
