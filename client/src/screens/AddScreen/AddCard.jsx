@@ -31,9 +31,9 @@ const AddCard = (props) => {
     setIsCreated({ isCreated });
   };
 
-  if (isCreated) {
-    history.push("/");
-  }
+  // if (isCreated) {
+  //   history.push("/");
+  // }
 
   if (params.id) {
     api.updatePosts(params.id, post);
