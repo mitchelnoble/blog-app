@@ -1,5 +1,5 @@
-import React, { useState, useParams } from "react";
-import { useHistory } from "react-router-dom";
+import React, { useState } from "react";
+import { useHistory, useParams } from "react-router-dom";
 import api from "../../services/apiConfig";
 import { createPost } from "../../services/posts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -31,9 +31,9 @@ const AddCard = (props) => {
     setIsCreated({ isCreated });
   };
 
-  if (isCreated) {
-    history.push("/");
-  }
+  // if (isCreated) {
+  //   history.push("/");
+  // }
 
   if (params.id) {
     api.updatePosts(params.id, post);
