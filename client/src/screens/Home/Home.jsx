@@ -1,15 +1,27 @@
-import React from 'react';
-import './Home.css';
-import AddCard from '../AddCard/AddCard';
-import PostDetail from '../ExpandedPost/PostDetail';
+import { useState, useEffect } from "react";
+import "./Home.css";
+import { getPosts } from "../../services/posts";
+import AddCard from "../AddScreen/AddCard";
+import PostDetail from "../ExpandedPost/ExpandedPost";
 import PostCard from "../../components/PostCard/PostCard";
 import "./Home.css";
 
 // import PostDetail from "../PostDetail/PostDetail";
 
 const Home = () => {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(async () => {
+    const response = await getPosts();
+    setPosts(response);
+  }, []);
+
   return (
-    <div>{/* {MAP THROUGH POSTS HERE AND RENDER A POSTCARD FOR EACH} */}</div>
+    <div className="home">
+      {posts.map((post) => (
+        <PostCard post={post} />
+      ))}
+    </div>
   );
 };
 

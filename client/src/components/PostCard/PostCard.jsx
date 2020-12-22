@@ -8,7 +8,7 @@ export default function PostCard(props) {
       <div className="post-author">{post.author}</div>
       <div className="post-content-short">{post.content}</div>
       {/* Do we want to have the content on the post-card be a shorter version of the full detailed content?? */}
-      <Link to={`/posts/${post._id}`}>DETAIL ICON GOES HERE</Link>
+      <Link to={`/expanded-post/${post._id}`}>DETAIL ICON GOES HERE</Link>
     </div>
   );
 }
