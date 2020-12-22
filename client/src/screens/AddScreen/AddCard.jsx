@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import api from "../../services/apiConfig";
 import { createPost, updatePost } from "../../services/posts";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faEdit } from "@fortawesome/free-solid-svg-icons";
 
 const AddCard = (props) => {
   const history = useHistory();
@@ -11,7 +10,7 @@ const AddCard = (props) => {
   const [post, setPost] = useState({
     author: "",
     title: "",
-    imgUrl: "",
+    imgURL: "",
     content: "",
   });
 
@@ -26,10 +25,10 @@ const AddCard = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (params.id) {
-      updatePost(params.id, post);
+      await updatePost(params.id, post);
       history.push("/");
     } else {
-      createPost(post);
+      await createPost(post);
       history.push("/");
     }
   };
@@ -56,8 +55,8 @@ const AddCard = (props) => {
         <input
           className="input-image"
           placeholder="Image"
-          value={post.img}
-          name="image"
+          value={post.imgURL}
+          name="imgURL"
           onChange={handleChange}
         />
         <input
