@@ -3,7 +3,7 @@ import { Route } from "react-router-dom";
 import Home from "./screens/Home/Home";
 import AddCard from "./screens/AddScreen/AddCard";
 import Layout from "./components/shared/Layout/Layout";
-// import PostDetail from "./screens/PostDetail/PostDetail";
+import ExpandedPost from "./screens/ExpandedPost/ExpandedPost";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <Layout>
         <Route exact path="/" component={Home} />
         <Route path="/add-cards" component={AddCard} />
-        {/* <Route path="/post-detail/:id" component={PostDetail} /> */}
+        <Route path="/expanded-post/:id" component={ExpandedPost} />
       </Layout>
     </div>
   );
