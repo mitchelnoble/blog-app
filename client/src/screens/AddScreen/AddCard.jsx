@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useParams } from "react";
 import { useHistory } from "react-router-dom";
-import post from "../../../../models/post";
+import api from "../../services/apiConfig";
 import { createPost } from "../../services/posts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 
 const AddCard = (props) => {
   const history = useHistory();
+  const params = useParams();
   const [post, setPost] = useState({
     author: "",
     title: "",
@@ -26,17 +27,16 @@ const AddCard = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const isCreated = await addCard(isCreated);
+    const isCreated = await createPost(post);
     setIsCreated({ isCreated });
-    history.push("/");
   };
 
   if (isCreated) {
-    return <Redirect to={``} />;
+    history.push("/");
   }
 
   if (params.id) {
-    api.updatePosts(params.id, fields);
+    api.updatePosts(params.id, post);
     props.setToggleFetch((prev) => !prev);
     history.push("/");
   } else {
@@ -81,7 +81,7 @@ const AddCard = (props) => {
         </button>
       </form>
 
-      <div>
+      {/* <div>
         <div className="edit-time">
           <Link to={`/edit/${post.id}`}>
             <button className="edit-butt">
@@ -89,7 +89,7 @@ const AddCard = (props) => {
             </button>
           </Link>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
