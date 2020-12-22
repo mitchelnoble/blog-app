@@ -7,14 +7,20 @@ const ExpandedPost = (props) => {
   const params = useParams();
   const [post, setPost] = useState();
 
-  useEffect(() => {
-    const response = getPost(params.id);
+  useEffect(async () => {
+    const response = await getPost(params.id);
     setPost(response);
+    console.log(post);
   }, []);
-
+  if (!post) {
+    return <div>LOADING....</div>;
+  }
   return (
     <div>
       <div>{post.title}</div>
+      <div>{post.author}</div>
+      <div>{post.content}</div>
+      <img src={`${post.imgURL}`} alt={`${post.title}`} />
     </div>
   );
 };
