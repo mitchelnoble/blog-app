@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import { createPost, updatePost } from "../../services/posts";
+import { createPost, getPost, updatePost } from "../../services/posts";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faEdit } from "@fortawesome/free-solid-svg-icons";
 
@@ -14,6 +14,17 @@ const AddCard = (props) => {
     content: "",
   });
 
+  useEffect(() => {
+    // async function fetchData() {
+    //   await getPost(params.id);
+    // }
+    if (params.id) {
+      const response = getPost(params.id);
+      console.log(response);
+      setPost(response);
+    }
+  }, [params.id]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setPost({
@@ -26,7 +37,7 @@ const AddCard = (props) => {
     e.preventDefault();
     if (params.id) {
       await updatePost(params.id, post);
-      history.push("/");
+      history.push("/postman");
     } else {
       await createPost(post);
       history.push("/");
