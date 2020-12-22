@@ -32,8 +32,8 @@ const ExpandedPost = (props) => {
       <div>{post.author}</div>
       <div>{post.content}</div>
       <img src={`${post.imgURL}`} alt={`${post.title}`} />
-      <buttons onClick={handleDelete}>DELETE</buttons>
-      <Link to={`/add-card/${post._id}`}>
+      <button onClick={handleDelete}>DELETE</button>
+      <Link to={`/edit/${post._id}`}>
         <button>EDIT</button>
       </Link>
     </div>
