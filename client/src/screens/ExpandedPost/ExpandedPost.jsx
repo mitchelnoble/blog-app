@@ -7,14 +7,18 @@ const ExpandedPost = (props) => {
   const params = useParams();
   const [post, setPost] = useState();
 
-  useEffect(async () => {
-    const response = await getPost(params.id);
-    setPost(response);
-    console.log(post);
-  }, []);
+  useEffect(() => {
+    async function fetchData() {
+      const response = await getPost(params.id);
+      setPost(response);
+    }
+    fetchData();
+  }, [params.id]);
+
   if (!post) {
     return <div>LOADING....</div>;
   }
+
   return (
     <div>
       <div>{post.title}</div>
