@@ -39,7 +39,7 @@ const AddCard = (props) => {
       <form className="addForm" onSubmit={handleSubmit}>
         <input
           className="input-name"
-          placeholder="Home"
+          placeholder="Author"
           value={post.author}
           name="author"
           required
@@ -48,27 +48,27 @@ const AddCard = (props) => {
         />
         <input
           className="input-title"
-          placeholder="title"
+          placeholder="Title"
           value={post.title}
           name="title"
           onChange={handleChange}
         />
         <input
           className="input-image"
-          placeholder="image"
+          placeholder="Image"
           value={post.img}
           name="image"
           onChange={handleChange}
         />
         <input
           className="input-content"
-          placeholder="content"
+          placeholder="Your Content"
           value={post.content}
           name="content"
           onChange={handleChange}
         />
         <button type="submit" className="submit-button">
-          Bazinga
+          Make It So.
         </button>
       </form>
 
