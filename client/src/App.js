@@ -14,6 +14,7 @@ function App() {
         <Route path="/add-card" component={AddCard} />
         <Route path="/expanded-post/:id" component={ExpandedPost} />
         <Route path="/postman" component={PostMan} />
+        <Route path="/edit/:id" component={AddCard} />
       </Layout>
     </div>
   );

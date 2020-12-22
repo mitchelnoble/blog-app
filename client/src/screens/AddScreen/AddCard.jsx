@@ -8,29 +8,32 @@ const AddCard = (props) => {
   const history = useHistory();
   const params = useParams();
   const [post, setPost] = useState({
+    _id: "",
     author: "",
     title: "",
     imgURL: "",
     content: "",
+    _v: "",
+    createdAt: "",
+    updatedAt: "",
   });
-
+  console.log(post);
   useEffect(() => {
-    // async function fetchData() {
-    //   await getPost(params.id);
-    // }
-    if (params.id) {
-      const response = getPost(params.id);
-      console.log(response);
-      setPost(response);
+    async function fetchData() {
+      if (params.id) {
+        const response = await getPost(params.id);
+        setPost(response);
+      }
     }
+    fetchData();
   }, [params.id]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setPost({
-      ...post,
+    setPost((prevState) => ({
+      ...prevState,
       [name]: value,
-    });
+    }));
   };
 
   const handleSubmit = async (e) => {
@@ -46,7 +49,7 @@ const AddCard = (props) => {
 
   return (
     <div>
-      <form className="addForm" onSubmit={handleSubmit}>
+      <form className="addForm" onSubmit={handleSubmit} onChange={handleChange}>
         <input
           className="input-name"
           placeholder="Author"
@@ -54,28 +57,24 @@ const AddCard = (props) => {
           name="author"
           required
           autoFocus
-          onChange={handleChange}
         />
         <input
           className="input-title"
           placeholder="Title"
           value={post.title}
           name="title"
-          onChange={handleChange}
         />
         <input
           className="input-image"
           placeholder="Image"
           value={post.imgURL}
           name="imgURL"
-          onChange={handleChange}
         />
         <input
           className="input-content"
           placeholder="Your Content"
           value={post.content}
           name="content"
-          onChange={handleChange}
         />
         <button type="submit" className="submit-button">
           Make It So.
