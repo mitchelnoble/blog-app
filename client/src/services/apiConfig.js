@@ -1,21 +1,21 @@
 //api config
-import axios from 'axios'
+import axios from "axios";
 
-let apiUrl
+let apiUrl;
 
 const apiUrls = {
-    production: 'https://incredible-blog-app.herokuapp.com/api',
-    development: 'http://localhost:3000/api'
-}
+  production: "https://incredible-blog-app.herokuapp.com/api",
+  development: "http://localhost:3000/api",
+};
 
-if (window.location.hostname === 'localhost') {
-    apiUrl = apiUrls.development
+if (window.location.hostname === "localhost") {
+  apiUrl = apiUrls.development;
 } else {
-    apiUrl = apiUrls.production
+  apiUrl = apiUrls.production;
 }
 
 const api = axios.create({
-    baseURL: apiUrl
-})
+  baseURL: apiUrls.production,
+});
 
-export default api
+export default api;
