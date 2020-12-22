@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Home.css";
 import { getPosts } from "../../services/posts";
-import AddCard from "../AddScreen/AddCard";
-import PostDetail from "../ExpandedPost/ExpandedPost";
 import PostCard from "../../components/PostCard/PostCard";
 import "./Home.css";
 
