@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import { createPost, getPost, updatePost } from "../../services/posts";
+import { createPost, updatePost } from "../../services/posts";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faEdit } from "@fortawesome/free-solid-svg-icons";
+import "./AddCard.css"
 
 const AddCard = (props) => {
   const history = useHistory();
@@ -14,29 +15,19 @@ const AddCard = (props) => {
     content: "",
   });
 
-  useEffect(() => {
-    async function fetchData() {
-      if (params.id) {
-        const response = await getPost(params.id);
-        setPost(response);
-      }
-    }
-    fetchData();
-  }, [params.id]);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setPost((prevState) => ({
-      ...prevState,
+    setPost({
+      ...post,
       [name]: value,
-    }));
+    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (params.id) {
       await updatePost(params.id, post);
-      history.push("/postman");
+      history.push("/");
     } else {
       await createPost(post);
       history.push("/");
@@ -45,7 +36,8 @@ const AddCard = (props) => {
 
   return (
     <div>
-      <form className="addForm" onSubmit={handleSubmit} onChange={handleChange}>
+      <img className="comment-bubble" src="https://i.ibb.co/4NfN64J/Untitled-design-2-1.png" />
+      <form className="addForm" onSubmit={handleSubmit}>
         <input
           className="input-name"
           placeholder="Author"
@@ -53,39 +45,37 @@ const AddCard = (props) => {
           name="author"
           required
           autoFocus
+          onChange={handleChange}
         />
         <input
           className="input-title"
           placeholder="Title"
           value={post.title}
           name="title"
+          onChange={handleChange}
         />
         <input
           className="input-image"
-          placeholder="Image"
+          placeholder="Image URL"
           value={post.imgURL}
           name="imgURL"
+          onChange={handleChange}
         />
-        <input
-          className="input-content"
-          placeholder="Your Content"
-          value={post.content}
-          name="content"
-        />
+        <div className="content-form">
+          <input
+            className="input-content"
+            placeholder="Your Content"
+            value={post.content}
+            name="content"
+            onChange={handleChange}
+          />
+        </div>
         <button type="submit" className="submit-button">
           Make It So.
         </button>
       </form>
 
-      {/* <div>
-        <div className="edit-time">
-          <Link to={`/edit/${post.id}`}>
-            <button className="edit-butt">
-              <FontAwesomeIcon icon={faEdit} />
-            </button>
-          </Link>
-        </div>
-      </div> */}
+
     </div>
   );
 };

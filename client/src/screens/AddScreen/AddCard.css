@@ -1,0 +1,68 @@
+.comment-bubble {
+  width: 60vw;
+}
+
+.addForm {
+  margin-top: -25vw;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  
+}
+
+.input-name {
+  background-color: rgb(40, 189, 189);
+  height: 2vw;
+  margin-left: -4vw;
+  border: transparent;
+  margin-top: -25vw;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+}
+
+.input-title {
+  background-color: rgb(40, 189, 189);
+  height: 2vw;
+  margin-left: 4vw;
+  border: transparent;
+  margin-top: -25vw;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+}
+.input-image {
+  background-color: rgb(40, 189, 189);
+  height: 2vw;
+  margin-left: 4vw;
+  border: transparent;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+  
+}
+input:hover {
+  background-color: rgb(255, 240, 70);
+}
+.input-content{
+background-color: rgb(40, 189, 189);
+height: 5vw;
+width: 25vw;
+margin-left: -1vw;
+border: transparent;
+margin-top: 3vw;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+text-align: center;
+}
+
+.submit-button {
+background-color: rgb(183, 0, 211);
+border: transparent;
+margin-top: 1vw;
+border-radius: 20px;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+text-align: center;
+width: 5vw;
+height: 3vw;
+color: whitesmoke;
+text-shadow: 1px black;
+
+}
+.submit-button:hover {
+  background-color: lightcoral;
+}
