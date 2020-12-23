@@ -3,6 +3,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { createPost, updatePost } from "../../services/posts";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faEdit } from "@fortawesome/free-solid-svg-icons";
+import "./AddCard.css"
 
 const AddCard = (props) => {
   const history = useHistory();
@@ -35,6 +36,7 @@ const AddCard = (props) => {
 
   return (
     <div>
+      <img className= "comment-bubble" src="https://i.ibb.co/4NfN64J/Untitled-design-2-1.png"/>
       <form className="addForm" onSubmit={handleSubmit}>
         <input
           className="input-name"
@@ -54,18 +56,20 @@ const AddCard = (props) => {
         />
         <input
           className="input-image"
-          placeholder="Image"
+          placeholder="Image URL"
           value={post.imgURL}
           name="imgURL"
           onChange={handleChange}
         />
+        <div className= "content-form">
         <input
           className="input-content"
           placeholder="Your Content"
           value={post.content}
           name="content"
           onChange={handleChange}
-        />
+          />
+          </div>
         <button type="submit" className="submit-button">
           Make It So.
         </button>

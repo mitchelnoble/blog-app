@@ -1,9 +1,4 @@
-.nav {
-  
- 
-  
-  
-}
+
 
 .all-links {
 text-align: left;
@@ -29,6 +24,7 @@ color: black;
 font-size: 2vw;
 padding-left: 4vw;
 margin-top: 1vw;
+width: 3vw;
 
 }
 .link-nav {
@@ -45,14 +41,16 @@ margin-top: 1vw;
   color: black;
   font-size: 2vw;
   padding-left: 4vw;
+  width: 2.5vw;
 
 }
 .nav-add {
   padding-left: 4vw;
+  width: 2.5vw;
 }
-  .nav-login {
-
-    padding-left: 4vw;
+.nav-login {
+width: 2.5vw;
+  padding-left: 4vw;
 
   }
 
@@ -61,4 +59,15 @@ header {
   margin-top: -5.5vw;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 3vw;
+}
+
+.nav-login:hover {
+background-color: orange;
+}
+
+.nav-add:hover {
+  background-color: orange;
+  }
+.header-link:hover{
+  background-color: orange;
 }
