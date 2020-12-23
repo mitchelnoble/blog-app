@@ -5,7 +5,7 @@ const PostMan = () => {
   return (
     <div className='post-dude'>
       <Link to='/'>
-        
+        THANKS!
       </Link>  
     </div>
   );

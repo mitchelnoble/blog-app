@@ -31,6 +31,7 @@ const ExpandedPost = (props) => {
 
   return (
     <div>
+<<<<<<< HEAD
       <img className="big-pic" src={`${post.imgURL}`} alt={`${post.title}`} />
       <div className= "all-content">
       <div className= "blog-title">{post.title}</div>
@@ -40,6 +41,15 @@ const ExpandedPost = (props) => {
       <button className="delete" onClick={handleDelete}><FontAwesomeIcon icon={faTrash} /></button>
       <Link to={`/add-card/${post._id}`}>
         <button className="edit"><FontAwesomeIcon icon={faEdit} /></button>
+=======
+      <div>{post.title}</div>
+      <div>{post.author}</div>
+      <div>{post.content}</div>
+      <img src={`${post.imgURL}`} alt={`${post.title}`} />
+      <button onClick={handleDelete}>DELETE</button>
+      <Link to={`/edit/${post._id}`}>
+        <button>EDIT</button>
+>>>>>>> d7327dcc160b9ff979007f8ffeae5ac5c2c84044
       </Link>
     </div>
   );

@@ -36,7 +36,7 @@ const AddCard = (props) => {
 
   return (
     <div>
-      <img className= "comment-bubble" src="https://i.ibb.co/4NfN64J/Untitled-design-2-1.png"/>
+      <img className="comment-bubble" src="https://i.ibb.co/4NfN64J/Untitled-design-2-1.png" />
       <form className="addForm" onSubmit={handleSubmit}>
         <input
           className="input-name"
@@ -61,29 +61,21 @@ const AddCard = (props) => {
           name="imgURL"
           onChange={handleChange}
         />
-        <div className= "content-form">
-        <input
-          className="input-content"
-          placeholder="Your Content"
-          value={post.content}
-          name="content"
-          onChange={handleChange}
+        <div className="content-form">
+          <input
+            className="input-content"
+            placeholder="Your Content"
+            value={post.content}
+            name="content"
+            onChange={handleChange}
           />
-          </div>
+        </div>
         <button type="submit" className="submit-button">
           Make It So.
         </button>
       </form>
 
-      {/* <div>
-        <div className="edit-time">
-          <Link to={`/edit/${post.id}`}>
-            <button className="edit-butt">
-              <FontAwesomeIcon icon={faEdit} />
-            </button>
-          </Link>
-        </div>
-      </div> */}
+
     </div>
   );
 };
