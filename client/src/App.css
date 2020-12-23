@@ -1,8 +1,11 @@
 body {
   text-align: center;
-  background-image: url("https://thenextweb.com/wp-content/blogs.dir/1/files/2013/09/foam_2.jpg");
+  background-image:  url("https://thenextweb.com/wp-content/blogs.dir/1/files/2013/09/foam_2.jpg"); 
   background-repeat: repeat;
-  background-size: 35vw;
+  background-blend-mode: lighten;
+  background-size: 570px;
+  background-color: rgb(94, 94, 94);
+  background-blend-mode: soft-light;
   
-
 }
+
