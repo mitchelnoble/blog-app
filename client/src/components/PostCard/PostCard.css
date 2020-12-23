@@ -21,8 +21,8 @@
 .post-title {
   text-align: center;
   justify-content: center;
-  color: rgb(238, 130, 52);
-  text-shadow:1px 1px black;
+  color:  rgb(252, 115, 61);
+  text-shadow:1.5px 1px black;
 }
 .post-author {
   text-align: center;
@@ -43,4 +43,7 @@ margin-left: -10vw;
   text-align: center;
   margin-left: -19.5vw;
 
+}
+.post-card:hover {
+background-color: lightgreen;
 }

@@ -1,0 +1,50 @@
+.big-pic{
+object-fit: contain;
+width: 23vw;
+height: 30vw;
+margin-left: -50vw;
+margin-top: 5vw;
+border-top: rgb(252, 115, 61);
+border-left: transparent;
+border-right: transparent;
+border-bottom: rgb(252, 115, 61);
+border-style: solid;
+margin-bottom: 1.6vw;
+}
+.all-content{
+  background-color: rgba(167, 167, 167, 0.742);
+  width: 40vw;
+  height: 30vw;
+  margin-left: 40vw;
+  margin-top: -32vw;
+  border-radius: 15px;
+}
+.blog-title {
+font-size: 3vw;
+color:  rgb(252, 115, 61);
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+text-shadow: 1.5px 1.5px rgb(36, 36, 36);
+}
+.edit {
+  margin-bottom: 15vw;
+ font-size: 3vw;
+ background-color: transparent;
+ border: transparent;
+ margin-left: 20vw;
+ color: rgb(119, 191, 119);
+}
+.delete {
+  margin-top: -17vw;
+ font-size: 3vw;
+ background-color: transparent;
+ border: transparent;
+ margin-left: 20vw;
+ color: rgb(220, 140, 108);
+}
+
+.edit:hover {
+  background-color: rgba(249, 229, 76, 0.666);
+}
+.delete:hover {
+  background-color:rgba(249, 229, 76, 0.666);
+}
